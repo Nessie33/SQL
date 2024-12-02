@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 engine = create_engine('sqlite:///taskmanager.db')
 
 
-Session = sessionmaker(bind=engine)
+Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 session = Session()
 
 
